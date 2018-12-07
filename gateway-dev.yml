@@ -1,2 +1,17 @@
-ip=192.168.30.51
-port=9999
+zuul:
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: SPRING-CLOUD-FEIGN
+    api-b:
+      path: /api-b/**
+      serviceId: SPRING-CLOUD-RIBBON
+    common:
+      path: /api-common/**
+      serviceId: SPRING-CLOUD-COMMON
+    api-login:
+      path: /api-gateway/**
+      serviceId: API-GATEWAY
