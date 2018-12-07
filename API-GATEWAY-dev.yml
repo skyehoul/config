@@ -1,3 +1,21 @@
+server:
+  port: 8008
+spring:
+  datasource: 
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.1.117:3306/esavile_1.1?useUnicode=true&characterEncoding=UTF-8&useSSL=true
+    username: root
+    password: 123
+#Redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456@redis
+    timeout:
+      3000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
 zuul:
   host:
     connect-timeout-millis: 10000
